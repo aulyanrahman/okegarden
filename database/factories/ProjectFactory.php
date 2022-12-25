@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PostFactory extends Factory
+class ProjectFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Post::class;
+    protected $model = Project::class;
 
     /**
      * Define the model's default state.
@@ -28,7 +28,7 @@ class PostFactory extends Factory
             'body' => collect($this->faker->paragraphs(mt_rand(10, 15)))
                 ->map(fn ($p) => "<p>$p</p>")->implode(''),
             'user_id' => mt_rand(1, 5),
-            'category_id' => mt_rand(1, 3),
+            'status_id' => mt_rand(1, 3),
         ];
     }
 }

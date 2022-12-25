@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Project extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
 
-    protected $with = ['category', 'author'];
+    protected $with = ['status', 'author'];
 
-    public function category()
+    public function status()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Status::class);
     }
 
     public function author()
@@ -33,9 +33,9 @@ class Post extends Model
             });
         });
 
-        $query->when($filter['category'] ??  false, function ($query, $category) {
-            return $query->whereHas('category', function ($query) use ($category) {
-                $query->where('slug', $category);
+        $query->when($filter['status'] ??  false, function ($query, $status) {
+            return $query->whereHas('status', function ($query) use ($status) {
+                $query->where('slug', $status);
             });
         });
 
