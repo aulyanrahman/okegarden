@@ -32,7 +32,7 @@
                     </small>
                 </p>
                 <p class="card-text">{{ $projects[0]->excerpt }}</p>
-                <a href="/post/{{ $projects[0]->slug }}" class="text-decoration-none btn btn-primary">Read More</a>
+                <a href="/post/{{ $projects[0]->slug }}" class="text-decoration-none btn btn-primary">Details</a>
             </div>
         </div>
         <div class="container">
@@ -53,7 +53,7 @@
                                 </small>
                             </p>                        
                             <p class="card-text">{{ $post->excerpt }}</p>
-                            <a href="/post/{{ $post->slug }}" class="btn btn-primary">Read More</a>
+                            <a href="/post/{{ $post->slug }}" class="btn btn-primary">Details</a>
                         </div>
                     </div>
                 </div>
