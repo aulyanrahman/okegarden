@@ -16,7 +16,7 @@
     {{-- My Styles --}}
     <link rel="stylesheet" href="/css/style.css">
 
-    <title>WPU Blogs! | {{ $title }}</title>
+    <title>OKE Garden! | {{ $title }}</title>
   </head>
   <body>
 
