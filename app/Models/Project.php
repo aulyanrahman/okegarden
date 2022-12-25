@@ -46,4 +46,9 @@ class Project extends Model
             $query->where('username', $author))
         );
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

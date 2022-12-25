@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\StatusController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardProjectController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RegisterController;
@@ -58,3 +58,5 @@ Route::get('/dashboard', function() {
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::resource('/dashboard/projects', DashboardProjectController::class)->middleware('auth');
