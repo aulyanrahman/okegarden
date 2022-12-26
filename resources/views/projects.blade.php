@@ -24,7 +24,7 @@
         <div class="card mb-5">
             <img src="https://source.unsplash.com/1200x400/?{{ $projects[0]->status->name }}" class="card-img-top" alt="{{ $projects[0]->status->name }}">
             <div class="card-body text-center">
-                <h3 class="card-title"><a href="/post/{{ $projects[0]->slug }}" class="text-decoration-none text-dark">{{ $projects[0]->title }}</a></h3>
+                <h3 class="card-title"><a href="/project/{{ $projects[0]->slug }}" class="text-decoration-none text-dark">{{ $projects[0]->title }}</a></h3>
                 <p>
                     <small class="text-muted">
                         By. <a href="/projects/?author={{ $projects[0]->author->username }}" class="text-decoration-none">{{ $projects[0]->author->name }}</a> in <a href="/projects/?status={{ $projects[0]->status->slug }}" class="text-decoration-none">{{ $projects[0]->status->name }}</a> 
@@ -32,28 +32,28 @@
                     </small>
                 </p>
                 <p class="card-text">{{ $projects[0]->excerpt }}</p>
-                <a href="/post/{{ $projects[0]->slug }}" class="text-decoration-none btn btn-primary">Details</a>
+                <a href="/project/{{ $projects[0]->slug }}" class="text-decoration-none btn btn-primary">Details</a>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                @foreach ($projects->skip(1) as $post)            
+                @foreach ($projects->skip(1) as $project)            
                 <div class="col-md-4 mb-5">
                     <div class="card">
                         <div class="position-absolute top-0 start-0 px-3 py-2 " style="background-color: rgba(0, 0, 0, 0.6)">
-                            <a href="/projects/?status={{ $post->status->slug }}" class="text-white text-decoration-none">{{ $post->status->name }}</a>
+                            <a href="/projects/?status={{ $project->status->slug }}" class="text-white text-decoration-none">{{ $project->status->name }}</a>
                         </div>
-                        <img src="https://source.unsplash.com/500x400/?{{ $post->status->name }}"  class="card-img-top" alt="{{ $post->status->name }}">
+                        <img src="https://source.unsplash.com/500x400/?{{ $project->status->name }}"  class="card-img-top" alt="{{ $project->status->name }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $post->title }}</h5>
+                            <h5 class="card-title">{{ $project->title }}</h5>
                             <p>
                                 <small class="text-muted">
-                                    By. <a href="/projects/?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> 
-                                    {{ $post->created_at->diffForHumans() }}
+                                    By. <a href="/projects/?author={{ $project->author->username }}" class="text-decoration-none">{{ $project->author->name }}</a> 
+                                    {{ $project->created_at->diffForHumans() }}
                                 </small>
                             </p>                        
-                            <p class="card-text">{{ $post->excerpt }}</p>
-                            <a href="/post/{{ $post->slug }}" class="btn btn-primary">Details</a>
+                            <p class="card-text">{{ $project->excerpt }}</p>
+                            <a href="/project/{{ $project->slug }}" class="btn btn-primary">Details</a>
                         </div>
                     </div>
                 </div>
